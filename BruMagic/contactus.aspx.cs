@@ -26,7 +26,7 @@ namespace BruMagic
 
             System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("brumagicultimate@gmail.com", "teambahagia");
             smtpClient.Credentials = credentials;
-            msg = new MailMessage("brumagicultimate@gmail.com", email.Text);
+            msg = new MailMessage("brumagicultimate@hotmail.com", email.Text);
             msg.Subject = "comment from" + name.Text;
             msg.Body = comment.Text;
 
