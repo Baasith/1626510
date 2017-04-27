@@ -18,26 +18,32 @@ namespace BruMagic
         protected void send_Click(object sender, EventArgs e)
         {
             SmtpClient smtpClient = new SmtpClient();
-            MailMessage msg = new MailMessage("brumagicultimate@gmail.com", email.Text);
 
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtpClient.Host = "smtp.gmail.com";
             smtpClient.Port = 587;
             smtpClient.EnableSsl = true;
 
-            System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("brumagicultimate@gmail.com", "teambahagia");
-            smtpClient.Credentials = credentials;
-            msg = new MailMessage("brumagicultimate@hotmail.com", email.Text);
-            msg.Subject = "comment from" + name.Text;
-            msg.Body = comment.Text;
+            System.Net.NetworkCredential userpass = new System.Net.NetworkCredential("brumagicultimate@gmail.com", "teambahagia");
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = userpass;
+
+            MailMessage msg = new MailMessage();
+            msg.From = new MailAddress(email.Text);
+            msg.To.Add (new MailAddress("brumagicultimate@gmail.com"));
+
+            msg.Subject = "Subject : " + subject.Text;
+            msg.IsBodyHtml = true;
+            msg.Body = "Message From : " + name.Text + ", Email :" + email.Text + ", Message : " + comment.Text;
 
             try
             {
                 smtpClient.Send(msg);
-                status.Text = "<p>mail sent sucessfully</p>";
+                status.Text = "<p> Message sent sucesssfully </p>";
             }
             catch (Exception ex)
             {
-                status.Text = "<p>sending fail: </p>" + ex.Message + "i" + ex.InnerException + "</p>";
+                status.Text = "<p> Sending Fail: " + ex.Message + ":" + ex.InnerException + "</p>";
             }
         }
     }
