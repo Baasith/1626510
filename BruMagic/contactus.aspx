@@ -24,6 +24,8 @@
     <p>
         <asp:Label ID="Label4" runat="server" Text="Comment"></asp:Label><br />
         <asp:TextBox ID="comment" runat="server" Height="150px" Rows="5" TextMode="MultiLine"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="comment" ErrorMessage="please enter your comment"></asp:RequiredFieldValidator>
+
     </p>
     <p>
         <asp:Button ID="send" OnClick="send_Click" runat="server" Text="Send" /></asp:button>
