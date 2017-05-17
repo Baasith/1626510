@@ -9,7 +9,7 @@
 
      <p>
          <asp:Label ID="Label3" runat="server" Text="Password"></asp:Label>
-    <asp:TextBox ID="LoginPassword" runat="server"></asp:TextBox>
+    <asp:TextBox ID="LoginPassword" runat="server" TextMode="Password"></asp:TextBox>
     </p>
     
     <p>

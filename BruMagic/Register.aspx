@@ -14,7 +14,7 @@
 
      <p>
          <asp:Label ID="Label3" runat="server" Text="Password"></asp:Label>
-    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+    <asp:TextBox ID="TextBox3" runat="server" TextMode="Password"></asp:TextBox>
     </p>
     
     <p>
