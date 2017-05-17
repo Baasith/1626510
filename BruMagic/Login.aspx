@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <p>
-         <asp:Label ID="Label2" runat="server" Text="Email"></asp:Label>
+         <asp:Label ID="Label2" runat="server" Text="Username"></asp:Label>
     <asp:TextBox ID="LoginEmail" runat="server"></asp:TextBox>
     </p>
 

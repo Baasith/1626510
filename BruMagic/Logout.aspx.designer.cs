@@ -11,7 +11,7 @@ namespace BruMagic
 {
 
 
-    public partial class UploadImage
+    public partial class Logout
     {
     }
 }
